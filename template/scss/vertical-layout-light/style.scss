@@ -1,7 +1,81 @@
-@import "../common/light/common";
-@import "variables";
-@import "vertical-wrapper";
-@import "sidebar";
-@import "navbar";
-@import "layouts";
-@import "settings-panel"
+$max: 200;
+$offset: 5;
+$unit: 'px'; // Feel free to change the unit.
+@mixin list-loop($className, $styleName) {
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} { 
+      #{$styleName}: #{$i + $unit};
+    }
+    $i: $i + $offset;
+  }
+}
+
+// Margins
+@include list-loop('.m-t-', 'margin-top');
+@include list-loop('.m-r-', 'margin-right');
+@include list-loop('.m-b-', 'margin-bottom');
+@include list-loop('.m-l-', 'margin-left');
+@include list-loop('.m-x-', 'margin');
+// Paddings
+@include list-loop('.p-t-', 'padding-top');
+@include list-loop('.p-r-', 'padding-right');
+@include list-loop('.p-b-', 'padding-bottom');
+@include list-loop('.p-l-', 'padding-left');
+@include list-loop('.p-x-', 'padding');
+
+.d-flex{
+    display:flex;
+}
+
+.align-items-center{
+    align-items: center;
+}
+svg{
+    fill: #9a9a9a;
+}
+
+.header__search{
+    border-radius: 20px;
+    background: #191B20;
+    padding: 0 19px;
+    width: 259px;
+}
+
+.header__start{
+    right: 10px;
+}
+
+
+.widgets__box{
+    &.thryti{
+        position: relative;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(33.333% - 32px);
+        flex: 0 0 calc(33.333% - 32px);
+        width: calc(33.333% - 32px);
+        margin: 40px 16px 0;
+       
+    }
+    &.four{
+        position: relative;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(25% - 32px);
+        flex: 0 0 calc(25% - 32px);
+        width: calc(25% - 32px);
+        margin: 40px 16px 0;
+       
+    }
+}
+
+.wallets__item{
+    &.four{
+        position: relative;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(25% - 32px);
+        flex: 0 0 calc(25% - 32px);
+        width: calc(25% - 32px);
+        margin: 40px 16px 0;
+       
+    }
+}
