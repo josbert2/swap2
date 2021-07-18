@@ -1,3 +1,7 @@
+body {
+  font-family: Poppins;
+}
+
 .m-t-0 {
   margin-top: 0px;
 }
@@ -1651,7 +1655,7 @@ svg {
 }
 
 .header__search {
-  border-radius: 20px;
+  border-radius: 4px;
   background: #191B20;
   padding: 0 19px;
   width: 259px;
@@ -1686,6 +1690,23 @@ svg {
   flex: 0 0 calc(25% - 32px);
   width: calc(25% - 32px);
   margin: 40px 16px 0;
+}
+
+.tab-item {
+  display: none;
+}
+
+.tab-item.is-active {
+  display: block;
+}
+
+li.is-active {
+  border-top: 2px solid #355DFF;
+}
+
+.main-h1 {
+  font-size: 48px;
+  font-weight: 900;
 }
 
 /*# sourceMappingURL=../maps/vertical-layout-light/style.css.map */

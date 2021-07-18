@@ -10,7 +10,9 @@ $unit: 'px'; // Feel free to change the unit.
     $i: $i + $offset;
   }
 }
-
+body{
+    font-family: Poppins ;
+}
 // Margins
 @include list-loop('.m-t-', 'margin-top');
 @include list-loop('.m-r-', 'margin-right');
@@ -36,7 +38,7 @@ svg{
 }
 
 .header__search{
-    border-radius: 20px;
+    border-radius: 4px;
     background: #191B20;
     padding: 0 19px;
     width: 259px;
@@ -78,4 +80,19 @@ svg{
         margin: 40px 16px 0;
        
     }
+}
+
+.tab-item{
+    display: none;
+    &.is-active{
+        display: block;
+    }
+}
+
+li.is-active{
+    border-top: 2px solid #355DFF;
+}
+.main-h1{
+    font-size: 48px;
+    font-weight: 900;
 }

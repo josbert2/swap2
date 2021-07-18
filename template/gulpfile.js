@@ -11,6 +11,7 @@ var inject = require('gulp-inject');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var merge = require('merge-stream');
+var twig = require('gulp-twig');
 
 gulp.paths = {
     dist: 'dist',
@@ -57,11 +58,22 @@ gulp.task('serve:lite', function() {
 
     gulp.watch('**/*.css').on('change', browserSync.reload);
     gulp.watch('**/*.html').on('change', browserSync.reload);
+    gulp.watch('*.twig').on('change', browserSync.reload);
     gulp.watch('js/**/*.js').on('change', browserSync.reload);
 
 });
 
+gulp.task('twig', function () {
+    return gulp.src(['*.twig'])
+    // Stay live and reload on error
+  
+        .pipe(twig())
+        .pipe(gulp.dest('/'));
+ });
 
+ gulp.task('twig:watch', function () {
+    gulp.watch('*.twig');
+});
 
 gulp.task('sass:watch', function () {
     gulp.watch('./scss/**/*.scss');

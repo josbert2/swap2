@@ -1521,7 +1521,7 @@ body.dark .select.open {
   flex-shrink: 0;
   height: 48px;
   margin: 8px 0 0 8px;
-  border-radius: 12px;
+  border-radius: 4px;
   border: 1px solid #E4E4E4;
   font-size: 14px;
   font-weight: 700;
@@ -1700,15 +1700,19 @@ body.dark .page__col:nth-child(2) {
   min-width: 114px;
   height: 48px;
   padding: 0 24px;
-  border-radius: 12px;
-  font-family: 'Inter', sans-serif;
+  border-radius: 4px;
+
   font-size: 14px;
   font-weight: 600;
   -webkit-transition: all .2s;
   -o-transition: all .2s;
   transition: all .2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
 }
 
+.btn svg{
+  fill: #fff;
+}
 .btn img, .btn__text,
 .btn .icon {
   display: inline-block;
@@ -1952,7 +1956,7 @@ body.dark .switch__box {
   width: 255px;
   background: #ffffff;
   border-right: 1px solid #E4E4E4;
-  padding: 132px 20px 72px;
+  padding: 132px 0px 72px;
   -webkit-transition: width .2s;
   -o-transition: width .2s;
   transition: width .2s;
@@ -2043,13 +2047,25 @@ body.dark .switch__box {
   align-items: center;
   height: 56px;
   padding: 0 20px;
-  border-radius: 12px;
+  border-radius: 4px;
   white-space: nowrap;
   font-weight: 600;
   color: #808191;
   -webkit-transition: all .2s;
   -o-transition: all .2s;
   transition: all .2s;
+}
+.sidebar__item{
+  position: relative;
+}
+.sidebar__item.active::before{
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 100%;
+  top: 0;
+  width: 4px;
+  background-color: #1140ff;
 }
 
 .sidebar__item:hover, .sidebar__item.active {
@@ -2251,7 +2267,7 @@ body.dark .switch__box {
 }
 
 .sidebar.active, .sidebar.small {
-  width: 96px;
+  width: 57px;
   -webkit-transition: all .2s;
   -o-transition: all .2s;
   transition: all .2s;
@@ -10413,15 +10429,19 @@ body.dark .actions .select.open {
   margin: 15px auto;
   padding: 40px 32px;
 
-  border-radius: 24px; 
+  border-radius: 4px; 
 }
 
 .panel__title {
-  margin-bottom: 48px;
+  margin-bottom: 36px;
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 17px;
 }
 
 .main-input-container{
-  border-radius: 20px;
+  border-radius: 4px;
   background: #191B20;
   transition: all .2s;
 }
@@ -10432,6 +10452,9 @@ body.dark .actions .select.open {
 
 }
 
+.pure-color{
+  color: darkgrey;
+}
 .label-input {
   display: flex;
   flex-flow: row nowrap;
